@@ -11,7 +11,7 @@ void GestionPerrosController::registrarVisita(Perro *perrito, string &nombreVete
 {
     ConsultaVeterinario *nuevaVisita = new ConsultaVeterinario();
     nuevaVisita->setPerroObj(perrito);
-    nuevaVisita->setVeterinarioObj(veterinarios.at(nombreVeterinario));
+    nuevaVisita->setVeterinarioObj(veterinarios.at(nombreVeterinario)); // FIXME  Arreglar gestión, recibe un apuntador a veterinario y a perro, no solo cadenas
     nuevaVisita->setMotivoVisita(motivo);
     /*Fecha en segundos desde Enero 1, 1970*/
     nuevaVisita->setFecha();
@@ -19,7 +19,7 @@ void GestionPerrosController::registrarVisita(Perro *perrito, string &nombreVete
     numeroVisitaActual++;
     consultasVeterinario.push_back(nuevaVisita);
 }
-
+// TODO
 // FIXME  Arreglar gestión, recibe un apuntador a veterinario y a perro, no solo cadenas
 void GestionPerrosController::agregarPerro(string &nombreNuevo, string &tamanoNuevo, string &colorNuevo, int edadNueva, string &nombreRaza, string &codVeterinario)
 {
